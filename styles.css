@@ -3,6 +3,11 @@
     --purple: #BB99DD;
 }
 
+.dark {
+    --body-bg-color: #2d2a2f;
+    --purple: #BB99DD;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,16 +16,36 @@
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
     height: 100vh;
     font-family: 'Poppins', sans-serif;
     background-color: var(--body-bg-color);
+
+    transition: all 0.2s linear;
 }
 
-main {
+header, main {
     width: 320px;
+}
+
+header {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 20px;
+}
+
+#switch-theme {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    color: var(--purple);
+    font-weight: bold;
+    font-size: 28px;
+    background: transparent;
 }
 
 .user-picture {
@@ -69,6 +94,7 @@ main {
     margin-top: 46px;
 }
 
-.social-links a {
-    margin: 0 14px;
+.social-links a + a {
+    margin-left: 18px;
 }
+

@@ -14,6 +14,10 @@
 
 </head>
 <body>
+    <header>
+        <button id="switch-theme">☀️</button>
+    </header>
+
     <main>
         <figure class="user-picture">
             <img src="https://image.freepik.com/fotos-gratis/negocios-financas-e-emprego-conceito-de-empresarias-de-sucesso-feminino-jovem-talentosa-asiatica-programadora-de-ti-de-oculos-gerente-de-suporte-ao-cliente-sorrindo-para-a-camera_1258-59172.jpg?w=740" alt="Imagem de perfil">
@@ -71,5 +75,24 @@
             </a>
         </aside>
     </main>
+
+    <script>
+        const toogleThemeButton = document.getElementById('switch-theme');
+
+        toogleThemeButton.addEventListener('click', event => {
+
+            document.querySelector('body').classList.toggle('dark');
+
+            let currentTheme = toogleThemeButton.innerText;
+            
+            if (currentTheme === '☀️') {
+                toogleThemeButton.innerText = '🌜';
+                return;
+            }
+
+            toogleThemeButton.innerText = '☀️';
+
+        });
+    </script>
 </body>
 </html>
