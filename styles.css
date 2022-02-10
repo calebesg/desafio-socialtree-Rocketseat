@@ -38,14 +38,15 @@ header {
 }
 
 #switch-theme {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
     border: none;
-    color: var(--purple);
-    font-weight: bold;
     font-size: 28px;
     background: transparent;
+    cursor: pointer;
+}
+
+#switch-theme img {
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(230deg) brightness(100%) contrast(100%);
+    width: 26px;
 }
 
 .user-picture {

@@ -15,7 +15,11 @@
 </head>
 <body>
     <header>
-        <button id="switch-theme">☀️</button>
+        <button id="switch-theme">
+            <figure>
+                <img src="assets/dark.svg" alt="Icone do botão: Lua/Sol">
+            </figure>
+        </button>
     </header>
 
     <main>
@@ -79,19 +83,18 @@
     <script>
         const toogleThemeButton = document.getElementById('switch-theme');
 
-        toogleThemeButton.addEventListener('click', event => {
+        toogleThemeButton.addEventListener('click', () => {
 
             document.querySelector('body').classList.toggle('dark');
 
-            let currentTheme = toogleThemeButton.innerText;
-            
-            if (currentTheme === '☀️') {
-                toogleThemeButton.innerText = '🌜';
+            let currentIcon = document.querySelector('img').attributes[0].value;
+
+            if (currentIcon === 'assets/light.svg') {
+                document.querySelector('img').attributes[0].value = 'assets/dark.svg';
                 return;
             }
 
-            toogleThemeButton.innerText = '☀️';
-
+            document.querySelector('img').attributes[0].value = 'assets/light.svg';
         });
     </script>
 </body>
