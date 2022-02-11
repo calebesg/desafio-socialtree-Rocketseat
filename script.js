@@ -1,12 +1,16 @@
 const toogleThemeButton = document.getElementById('switch-theme');
 
-toogleThemeButton.addEventListener('click', () => {
+toogleThemeButton.addEventListener('click', toggleTheme);
 
-    document.querySelector('body').classList.toggle('dark');
+function toggleTheme() {
+    let existDarkClass = document.querySelector('body').classList.toggle('dark');
 
-    let currentIcon = document.querySelector('img').attributes[0].value;
+    updateIconToogleThemeButton(existDarkClass);
+}
 
-    if (currentIcon === 'assets/light.svg') {
+function updateIconToogleThemeButton(existDarkClass) {
+
+    if (existDarkClass === false) {
         document.querySelector('img').attributes[0].value = 'assets/dark.svg';
 
         toogleThemeButton.classList.toggle('switch-button-animation');
@@ -16,4 +20,4 @@ toogleThemeButton.addEventListener('click', () => {
 
     document.querySelector('img').attributes[0].value = 'assets/light.svg';
     toogleThemeButton.classList.toggle('switch-button-animation');
-});
+}
