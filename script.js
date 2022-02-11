@@ -1,23 +1,21 @@
-const toogleThemeButton = document.getElementById('switch-theme');
+const Icon = {
+    dark: 'dark-theme-icon.svg',
+    light: 'light-theme-icon.svg',
+};
 
-toogleThemeButton.addEventListener('click', toggleTheme);
-
-function toggleTheme() {
+function toggleTheme(button) {
     let existDarkClass = document.querySelector('body').classList.toggle('dark');
 
-    updateIconToogleThemeButton(existDarkClass);
-}
-
-function updateIconToogleThemeButton(existDarkClass) {
-
-    if (existDarkClass === false) {
-        document.querySelector('img').attributes[0].value = 'assets/dark.svg';
-
-        toogleThemeButton.classList.toggle('switch-button-animation');
-        
+    if (existDarkClass) {
+        updateButtonTheme(button, Icon.dark);
         return;
     }
 
-    document.querySelector('img').attributes[0].value = 'assets/light.svg';
-    toogleThemeButton.classList.toggle('switch-button-animation');
+    updateButtonTheme(button, Icon.light);
+}
+
+function updateButtonTheme(button, pathIcon) {
+    button.querySelector('img').attributes[0].value = `assets/${pathIcon}`;
+
+    button.classList.toggle('button-animation');
 }

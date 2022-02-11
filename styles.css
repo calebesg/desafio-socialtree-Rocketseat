@@ -47,7 +47,7 @@ header {
     transition: all 0.2s linear;
 }
 
-#switch-theme.switch-button-animation {
+#switch-theme.button-animation {
     transform: rotate(360deg);
 }
 
